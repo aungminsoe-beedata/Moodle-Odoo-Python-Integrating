@@ -1,0 +1,79 @@
+admin@nesterui.com  System Administrator
+
+
+Add external service  site admission ==>Server ==> Web Services ==> External Services
+
+
+2b749d8a6155950572de613a1db54461
+
+
+
+URL: https://nesterui.com/gicmd/webservice/rest/server.php?wstoken=2b749d8a6155950572de613a1db54461
+
+
+'<?xml version="1.0" encoding="UTF-8" ?>
+<EXCEPTION class="webservice_access_exception">
+<ERRORCODE>accessexception</ERRORCODE>
+<MESSAGE>Access control exception</MESSAGE>
+</EXCEPTION>
+
+
+api@yopmail.com
+
+
+
+Verify the Token:
+
+Ensure the token you are using belongs to a user with sufficient permissions.
+
+The user must have the required capabilities assigned in Moodle, such as webservice/rest:use and permissions for the specific function you are calling (core_webservice_get_site_info).
+
+Enable the Web Service:
+
+Go to Site Administration > Advanced features.
+
+Ensure Enable web services is checked.
+
+Check the Token’s Linked User:
+
+Go to Site Administration > Server > Web Services > Manage tokens.
+
+Confirm that the token is associated with the correct user and that the user has sufficient roles (e.g., Administrator).
+
+Check Function Permissions:
+
+Go to Site Administration > Server > Web Services > External services.
+
+Ensure the core_webservice_get_site_info function is added to the web service that the token is linked to.
+
+Create a New Token:
+
+If the token is not working, create a new token with the appropriate permissions:
+
+Go to Site Administration > Server > Web Services > Manage tokens.
+
+Click Create token, select a user with Administrator permissions, and generate the token.
+
+Verify IP Restrictions (if any):
+
+If IP restrictions are enabled for web services, ensure that the server’s IP is added to the allowed IPs:
+
+Go to Site Administration > Security > IP blocker.
+
+Enable the REST Protocol:
+
+Go to Site Administration > Server > Web Services > Manage protocols.
+
+Ensure the REST protocol is enabled.
+
+Test the API:
+
+Once all configurations are verified, test the API again using the following simplified request:
+
+python
+Copy
+Edit
+
+
+
+admin@Gic1
